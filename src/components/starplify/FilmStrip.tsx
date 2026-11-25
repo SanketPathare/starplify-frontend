@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ArrowRight, X, Play } from 'lucide-react';
+import { X, Play, ArrowRight } from 'lucide-react';
 
 interface CategoryItem {
   id: string;
@@ -46,21 +46,30 @@ export default function StarplifyFilmStrip() {
   const [activePreview, setActivePreview] = useState<CategoryItem | null>(null);
 
   return (
-    <section id="about" className="relative py-24 sm:py-32 bg-[#080808] overflow-hidden scroll-mt-20">
+    <section id="about" className="relative py-20 sm:py-28 lg:py-32 bg-[#080808] overflow-hidden scroll-mt-20">
       <div id="how-it-works" className="scroll-mt-24" />
       <div id="filmstrip" className="scroll-mt-24" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Architectural Background Vertical Grid Lines */}
+      <div className="absolute inset-0 pointer-events-none z-[1] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 divide-y-0 md:divide-x divide-white/[0.06]" aria-hidden="true">
+        <div className="border-l border-white/[0.06] h-full" />
+        <div className="h-full" />
+        <div className="border-r border-white/[0.06] h-full" />
+      </div>
+      <div className="absolute inset-y-0 left-4 sm:left-8 xl:left-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
+      <div className="absolute inset-y-0 right-4 sm:right-8 xl:right-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-16 items-center">
           
-          {/* Left Column Narrative (Exact Figma Layout) */}
+          {/* Left Column Narrative (Exact Reference Layout) */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold uppercase text-white tracking-tight leading-[1.08] font-sans">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] font-bold uppercase text-white tracking-tight leading-[1.08] font-sans">
               MADE FOR ACTORS WHO WANT TO <br />
               BE SEEN
             </h2>
 
-            <p className="mt-6 sm:mt-8 text-xs sm:text-sm md:text-base text-[#A1A1AA] font-mono leading-relaxed max-w-xl">
+            <p className="mt-6 sm:mt-7 text-xs sm:text-sm md:text-base text-[#A1A1AA] font-mono leading-relaxed max-w-xl">
               We've created a space where actors can build their presence, showcase their talent, and discover real casting opportunities — all in one place. No more endless searching or missed chances.
             </p>
 
@@ -68,10 +77,10 @@ export default function StarplifyFilmStrip() {
               Whether you're a beginner taking your first step or an experienced actor looking for your next big role, Starplify helps you move forward with confidence.
             </p>
 
-            <div className="mt-7 sm:mt-9 w-full sm:w-auto">
+            <div className="mt-7 sm:mt-8 w-full sm:w-auto">
               <a
                 href="#explore-talent"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-[8px] bg-[#8233FF] hover:bg-[#9353FF] text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(130,51,255,0.4)] group active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[6px] bg-[#8233FF] hover:bg-[#9353FF] text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(130,51,255,0.4)] group active:scale-95"
               >
                 <span>JOIN AS ACTOR</span>
                 <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#8233FF] font-bold text-xs">
@@ -81,74 +90,26 @@ export default function StarplifyFilmStrip() {
             </div>
           </div>
 
-          {/* Right Column: Vertical 35mm Film Strip Reel */}
+          {/* Right Column: Vertical 35mm Film Strip Reel (Exact Reference Asset) */}
           <div className="lg:col-span-6 flex justify-center lg:justify-end w-full">
-            <div className="relative rounded-2xl bg-[#0c0c10] border border-white/10 p-2 sm:p-3 shadow-2xl flex items-stretch w-full max-w-[440px] sm:max-w-[480px]">
-              
-              {/* Left Column of White Rectangular Sprocket Holes */}
-              <div className="flex flex-col justify-between items-center py-3 px-1.5 sm:px-2 select-none" aria-hidden="true">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-2.5 h-3.5 sm:w-3 sm:h-4 rounded-[2px] bg-white shadow-sm my-0.5 sm:my-1"
-                  />
-                ))}
-              </div>
+            <div className="relative shadow-2xl w-full max-w-[440px] sm:max-w-[480px] group">
+              <img
+                src="/images/filmstrip_reel.png"
+                alt="Made for Actors - Drama, Film, Web Series, Music"
+                className="w-full h-auto object-contain block select-none drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]"
+              />
 
-              {/* Inside 2x2 Grid of Genre Cards */}
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-4 p-1.5 sm:p-2.5 bg-black rounded-xl flex-1">
+              {/* 2x2 Interactive Clickable Hotspots overlaying the 4 Genre Cards */}
+              <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 px-[6%] py-[5.5%] gap-[6%] pointer-events-none">
                 {CATEGORIES.map((cat) => (
-                  <div
+                  <button
                     key={cat.id}
                     onClick={() => setActivePreview(cat)}
-                    className="group relative rounded-xl overflow-hidden bg-[#121218] border border-white/10 hover:border-[#8233FF] transition-all cursor-pointer flex flex-col"
-                  >
-                    {/* Media Thumbnail */}
-                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-black">
-                      <img
-                        src={cat.imageUrl}
-                        alt={cat.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                      
-                      {/* Play Icon on Hover */}
-                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 backdrop-blur-[2px]">
-                        <div className="w-9 h-9 rounded-full bg-[#8233FF] text-white flex items-center justify-center shadow-lg">
-                          <Play className="w-4 h-4 fill-white ml-0.5" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Card Title & Arrow Icon (Figma Frame 59) */}
-                    <div className="p-2 sm:p-3 flex items-center justify-between bg-[#0e0e14]">
-                      <div>
-                        <span className="font-bold text-xs sm:text-sm tracking-wider uppercase text-white font-sans block">
-                          {cat.title}
-                        </span>
-                        <span className="text-[10px] text-[#A1A1AA] font-mono hidden sm:inline">
-                          {cat.tag}
-                        </span>
-                      </div>
-                      <div className="w-6 h-6 rounded-full bg-white/5 border border-white/15 flex items-center justify-center text-white/70 group-hover:text-white group-hover:bg-[#8233FF] group-hover:border-[#8233FF] transition-colors flex-shrink-0">
-                        <ArrowRight className="w-3 h-3" />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Right Column of White Rectangular Sprocket Holes */}
-              <div className="flex flex-col justify-between items-center py-3 px-1.5 sm:px-2 select-none" aria-hidden="true">
-                {Array.from({ length: 12 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-2.5 h-3.5 sm:w-3 sm:h-4 rounded-[2px] bg-white shadow-sm my-0.5 sm:my-1"
+                    className="pointer-events-auto rounded-xl transition-all duration-200 hover:ring-2 hover:ring-[#8233FF]/80 hover:bg-white/[0.04] active:scale-[0.98] cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#8233FF]"
+                    aria-label={`Preview ${cat.title} auditions`}
                   />
                 ))}
               </div>
-
             </div>
           </div>
 
@@ -197,13 +158,13 @@ export default function StarplifyFilmStrip() {
               <a
                 href="#explore-talent"
                 onClick={() => setActivePreview(null)}
-                className="flex-1 py-3 px-4 rounded-[8px] bg-[#8233FF] hover:bg-[#9353FF] text-white font-bold text-xs tracking-wider uppercase text-center transition-all shadow-[0_0_20px_rgba(130,51,255,0.4)]"
+                className="flex-1 py-3 px-4 rounded-[6px] bg-[#8233FF] hover:bg-[#9353FF] text-white font-bold text-xs tracking-wider uppercase text-center transition-all shadow-[0_0_20px_rgba(130,51,255,0.4)]"
               >
                 BROWSE {activePreview.title} ROLES
               </a>
               <button
                 onClick={() => setActivePreview(null)}
-                className="py-3 px-4 rounded-[8px] bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase transition-colors"
+                className="py-3 px-4 rounded-[6px] bg-white/10 hover:bg-white/15 text-white font-bold text-xs uppercase transition-colors"
               >
                 CLOSE
               </button>
