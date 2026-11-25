@@ -5,16 +5,28 @@ import { Users } from 'lucide-react';
 
 export default function StarplifyHero() {
   return (
-    <section id="hero" className="relative isolate pt-36 pb-16 sm:pt-44 sm:pb-24 lg:pt-52 lg:pb-32 overflow-hidden scroll-mt-20">
+    <section id="hero" className="relative isolate pt-36 pb-16 sm:pt-44 sm:pb-24 lg:pt-52 lg:pb-28 overflow-hidden scroll-mt-20">
       
-      {/* Pristine 4K Audition Set Clapperboard Background Photo */}
+      {/* Cinematic Audition Set Video Background with Fallback Photo (Frame 1) */}
       <div className="absolute inset-0 -z-10 bg-[#080808] pointer-events-none overflow-hidden" aria-hidden="true">
-        <img
-          src="/images/hero_audition_bg.png"
-          alt="Audition Set Clapperboard & Actress"
-          className="w-full h-full object-cover object-center opacity-45"
-        />
-        {/* Soft Vignette Overlay to blend seamlessly into base */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/hero_audition_bg.png"
+          className="w-full h-full object-cover object-center opacity-40"
+        >
+          <source src="/videos/hero_video.mp4" type="video/mp4" />
+          <source src="/images/hero_video.mp4" type="video/mp4" />
+          {/* Fallback Image */}
+          <img
+            src="/images/hero_audition_bg.png"
+            alt="Audition Set Clapperboard & Actress"
+            className="w-full h-full object-cover object-center opacity-40"
+          />
+        </video>
+        {/* Soft Vignette Overlay to blend seamlessly into dark background */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/75 via-[#080808]/40 to-[#080808]" />
       </div>
 
@@ -37,7 +49,7 @@ export default function StarplifyHero() {
         </h1>
 
         {/* Editorial Subheadline (Figma Typewriter Monospace) */}
-        <p className="mt-6 sm:mt-7 text-sm sm:text-base md:text-lg text-[#C4C4CC] max-w-2xl mx-auto leading-relaxed font-mono">
+        <p className="mt-6 sm:mt-7 text-xs sm:text-sm md:text-base text-[#C4C4CC] max-w-xl mx-auto leading-relaxed font-mono">
           From auditions to final casting — streamline your entire journey with a platform designed for actors and recruiters.
         </p>
 
@@ -46,7 +58,7 @@ export default function StarplifyHero() {
           {/* Primary CTA: JOIN AS ACTOR */}
           <a
             href="#explore-talent"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-[8px] bg-[#8233FF] hover:bg-[#9353FF] text-white font-bold text-sm tracking-wider uppercase transition-all shadow-[0_0_25px_rgba(130,51,255,0.45)] group active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-[8px] bg-[#8233FF] hover:bg-[#9353FF] text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-[0_0_25px_rgba(130,51,255,0.45)] group active:scale-95"
           >
             <span>JOIN AS ACTOR</span>
             <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#8233FF] font-bold text-xs">
@@ -57,38 +69,38 @@ export default function StarplifyHero() {
           {/* Secondary CTA: BROWSE AUDITIONS */}
           <a
             href="#filmstrip"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-[8px] bg-white hover:bg-white/90 text-[#8233FF] font-bold text-sm tracking-wider uppercase transition-all shadow-md active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-[8px] bg-white hover:bg-white/90 text-[#8233FF] font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-md active:scale-95"
           >
             <span>BROWSE AUDITIONS</span>
             <Users className="w-4 h-4 text-[#8233FF]" />
           </a>
         </div>
 
-        {/* Metrics Row (Clean, Open 3-Column Display matching Figma Frame 1321319015) */}
-        <div className="mt-20 pt-10 grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 max-w-5xl mx-auto">
+        {/* Metrics Row (Matching Figma Frame 1321319015 & Screenshot Layout) */}
+        <div className="mt-20 pt-10 border-t border-white/10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10 max-w-5xl mx-auto">
           <div className="flex flex-col items-center text-center px-4">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-white mb-2">
+            <div className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold font-sans tracking-tight text-white mb-2 leading-none">
               10,000+
             </div>
-            <div className="text-xs sm:text-sm font-mono tracking-wider text-[#A1A1AA] uppercase">
+            <div className="text-xs sm:text-sm font-mono tracking-wide text-[#A1A1AA]">
               Actors Building Their Portfolio
             </div>
           </div>
 
-          <div className="flex flex-col items-center text-center px-4">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-white mb-2">
+          <div className="flex flex-col items-center text-center px-4 pt-6 md:pt-0">
+            <div className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold font-sans tracking-tight text-white mb-2 leading-none">
               500+
             </div>
-            <div className="text-xs sm:text-sm font-mono tracking-wider text-[#A1A1AA] uppercase">
+            <div className="text-xs sm:text-sm font-mono tracking-wide text-[#A1A1AA]">
               New Roles Every Month
             </div>
           </div>
 
-          <div className="flex flex-col items-center text-center px-4">
-            <div className="text-4xl sm:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-white mb-2">
+          <div className="flex flex-col items-center text-center px-4 pt-6 md:pt-0">
+            <div className="text-4xl sm:text-5xl lg:text-[3.25rem] font-bold font-sans tracking-tight text-white mb-2 leading-none">
               1,000+
             </div>
-            <div className="text-xs sm:text-sm font-mono tracking-wider text-[#A1A1AA] uppercase">
+            <div className="text-xs sm:text-sm font-mono tracking-wide text-[#A1A1AA]">
               Successful Castings
             </div>
           </div>

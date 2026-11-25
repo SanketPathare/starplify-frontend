@@ -39,7 +39,7 @@ export default function StarplifyNavbar() {
           {/* Brand Logo (Frame 1) */}
           <StarplifyLogo />
 
-          {/* Desktop Navigation Links (Direct text with HOME in purple pill, matching Figma Frame 1) */}
+          {/* Desktop Navigation Links (Matching Screenshot & Figma Frame 1) */}
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {NAV_LINKS.map((link) => {
               const isCurrent = activeSection === link.name;
@@ -48,10 +48,10 @@ export default function StarplifyNavbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setActiveSection(link.name)}
-                  className={`text-xs tracking-wider font-bold transition-all ${
+                  className={`text-xs tracking-wider font-bold transition-all px-2 py-1 ${
                     isCurrent
-                      ? 'bg-[#8233FF] text-white px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(130,51,255,0.4)]'
-                      : 'text-[#C4C4CC] hover:text-white px-2 py-1'
+                      ? 'text-[#9353FF] font-extrabold'
+                      : 'text-[#C4C4CC] hover:text-white'
                   }`}
                 >
                   {link.name}
