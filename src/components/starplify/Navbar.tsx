@@ -1,0 +1,122 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import StarplifyLogo from './StarplifyLogo';
+import { Menu, X, User } from 'lucide-react';
+
+const NAV_LINKS = [
+  { name: 'HOME', href: '#hero' },
+  { name: 'ABOUT', href: '#about' },
+  { name: 'EXPLORE TALENT', href: '#explore-talent' },
+  { name: 'HOW IT WORKS', href: '#how-it-works' },
+  { name: 'SUCCESS STORIES', href: '#success-stories' },
+  { name: 'FOR CASTING DIRECTORS', href: '#for-casting-directors' },
+];
+
+export default function StarplifyNavbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('HOME');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-[#080808]/90 backdrop-blur-xl border-b border-white/[0.08] shadow-2xl py-3.5'
+          : 'bg-transparent py-5 sm:py-6'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between">
+          {/* Brand Logo (Frame 1) */}
+          <StarplifyLogo />
+
+          {/* Desktop Navigation Links (Direct text with HOME in purple pill, matching Figma Frame 1) */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+            {NAV_LINKS.map((link) => {
+              const isCurrent = activeSection === link.name;
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setActiveSection(link.name)}
+                  className={`text-xs tracking-wider font-bold transition-all ${
+                    isCurrent
+                      ? 'bg-[#8233FF] text-white px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(130,51,255,0.4)]'
+                      : 'text-[#C4C4CC] hover:text-white px-2 py-1'
+                  }`}
+                >
+                  {link.name}
+                </a>
+              );
+            })}
+          </nav>
+
+          {/* Right Header Action: User Profile Avatar Only (Exact Figma Frame 1) */}
+          <div className="flex items-center gap-3">
+            <a
+              href="#profile"
+              aria-label="User Account"
+              className="w-9 h-9 rounded-full border border-white/20 bg-white/[0.05] flex items-center justify-center text-white hover:border-[#8233FF] hover:text-[#8233FF] transition-colors"
+            >
+              <User className="w-4 h-4" />
+            </a>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Drawer */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden mt-3 p-4 bg-[#0e0e14]/95 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-2xl flex flex-col gap-2">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => {
+                  setActiveSection(link.name);
+                  setMobileMenuOpen(false);
+                }}
+                className={`text-xs tracking-wider font-bold px-4 py-3 rounded-xl transition-all ${
+                  activeSection === link.name
+                    ? 'bg-[#8233FF] text-white shadow-md'
+                    : 'text-[#C4C4CC] hover:bg-white/5 hover:text-white'
+                }`}
+              >
+                {link.name}
+              </a>
+            ))}
+
+            <div className="pt-3 border-t border-white/10 flex flex-col gap-2 mt-1">
+              <a
+                href="#explore-talent"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#8233FF] text-white font-bold text-xs tracking-wider uppercase"
+              >
+                <span>JOIN AS ACTOR</span>
+                <span className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-[#8233FF] font-bold text-[10px]">
+                  +
+                </span>
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}
