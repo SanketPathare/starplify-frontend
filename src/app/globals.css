@@ -99,16 +99,31 @@ body {
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   border-left: 1px solid rgba(255, 255, 255, 0.07);
   border-right: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .architectural-grid-col {
   height: 100%;
-  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  display: none;
 }
 
-.architectural-grid-col:last-child {
-  border-right: none;
+.architectural-grid-col:first-child {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .architectural-grid-inner {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .architectural-grid-col {
+    display: block;
+    border-right: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .architectural-grid-col:last-child {
+    border-right: none;
+  }
 }
