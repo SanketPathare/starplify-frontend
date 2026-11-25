@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function StarplifyPage() {
   return (
-    <div className=" max-w-7xl relative min-h-screen bg-[#080808] text-white selection:bg-[#8233FF] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div className="w-full relative min-h-screen bg-[#080808] text-white selection:bg-[#8233FF] selection:text-white font-sans antialiased overflow-x-hidden">
       <StarplifyNavbar />
 
       <main className="relative z-10">

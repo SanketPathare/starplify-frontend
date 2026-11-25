@@ -29,7 +29,7 @@ export default function StarplifyNavbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#080808]/90 backdrop-blur-xl border-b border-white/[0.08] shadow-2xl py-3.5'
+          ? 'bg-black/5 backdrop-blur-lg py-3.5'
           : 'bg-transparent py-5 sm:py-6'
       }`}
     >
@@ -47,10 +47,10 @@ export default function StarplifyNavbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setActiveSection(link.name)}
-                  className={`text-xs tracking-wider font-bold transition-all px-2 py-1 ${
+                  className={`text-md tracking-wider font-bold transition-all px-2 py-1 ${
                     isCurrent
                       ? 'text-[#9353FF] font-extrabold'
-                      : 'text-[#C4C4CC] hover:text-white'
+                      : 'text-white  hover:text-white'
                   }`}
                 >
                   {link.name}
