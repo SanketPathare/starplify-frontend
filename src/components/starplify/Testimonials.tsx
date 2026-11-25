@@ -189,7 +189,7 @@ export default function StarplifyTestimonials() {
       <div className="absolute inset-y-0 right-4 sm:right-8 xl:right-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* 3-Column Architectural Grid Layout (Exact Match for Reference) */}
         <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b border-l border-r border-white/[0.08] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] bg-[#000000]">
           
