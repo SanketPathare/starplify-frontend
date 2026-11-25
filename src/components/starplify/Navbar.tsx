@@ -60,14 +60,14 @@ export default function StarplifyNavbar() {
             })}
           </nav>
 
-          {/* Right Header Action: User Profile Avatar Only (Exact Figma Frame 1) */}
+          {/* Right Header Action: User Profile Avatar with solid white background (Exact Reference) */}
           <div className="flex items-center gap-3">
             <a
               href="#profile"
               aria-label="User Account"
-              className="w-9 h-9 rounded-full border border-white/20 bg-white/[0.05] flex items-center justify-center text-white hover:border-[#8233FF] hover:text-[#8233FF] transition-colors"
+              className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:opacity-90 transition-opacity shadow-sm"
             >
-              <User className="w-4 h-4" />
+              <User className="w-4 h-4 text-black" strokeWidth={2.5} />
             </a>
 
             {/* Mobile Hamburger Toggle */}
