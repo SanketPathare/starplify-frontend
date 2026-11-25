@@ -15,7 +15,7 @@ export default function StarplifyCtaBanner() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative">
         <div className="relative rounded-2xl overflow-hidden border border-white/15 bg-black shadow-2xl group">
           <img
-            src="/images/figma/Frame 57.png"
+            src="/images/Frame 57.png"
             alt="Casting Made Simple & Efficient - Connect with the Right Talent"
             className="w-full h-auto object-cover block"
           />

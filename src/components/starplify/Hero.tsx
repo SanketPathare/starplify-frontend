@@ -10,7 +10,7 @@ export default function StarplifyHero() {
       {/* Pristine 4K Audition Set Clapperboard Background Photo */}
       <div className="absolute inset-0 -z-10 bg-[#080808] pointer-events-none overflow-hidden" aria-hidden="true">
         <img
-          src="/images/figma/hero_audition_bg.png"
+          src="/images/hero_audition_bg.png"
           alt="Audition Set Clapperboard & Actress"
           className="w-full h-full object-cover object-center opacity-45"
         />

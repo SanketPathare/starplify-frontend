@@ -6,32 +6,32 @@ import { Users } from 'lucide-react';
 const ACTOR_PORTRAITS = [
   {
     name: 'Clapperboard Actress',
-    src: '/images/figma/actor_clapper_actress.png',
+    src: '/images/actor_clapper_actress.png',
     role: 'Lead Cinema Actress',
   },
   {
     name: 'Leather Jacket Actress',
-    src: '/images/figma/actor_leather_woman.png',
+    src: '/images/actor_leather_woman.png',
     role: 'Drama & OTT Performer',
   },
   {
     name: 'Red Spotlight Actor',
-    src: '/images/figma/actor_red_spotlight.png',
+    src: '/images/actor_red_spotlight.png',
     role: 'Stage & Musical Theatre',
   },
   {
     name: 'Beige Trench Coat Actor',
-    src: '/images/figma/actor_beige_man.png',
+    src: '/images/actor_beige_man.png',
     role: 'Commercial & Editorial',
   },
   {
     name: 'Smiling Bomber Jacket Actor',
-    src: '/images/figma/actor_center_man.png',
+    src: '/images/actor_center_man.png',
     role: 'Method Actor & OTT',
   },
   {
     name: 'Black Suit Actor',
-    src: '/images/figma/actor_black_suit.png',
+    src: '/images/actor_black_suit.png',
     role: 'Feature Film Lead',
   },
 ];
@@ -59,7 +59,7 @@ export default function StarplifyDiscovery() {
           {/* 1. Top Center: Clapperboard Actress */}
           <div className="absolute top-4 left-1/2 -translate-x-1/2 pointer-events-auto w-48 xl:w-56 rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.85)] border border-white/15 hover:border-[#8233FF]/60 transition-transform duration-300 hover:scale-105 bg-black">
             <img
-              src="/images/figma/actor_clapper_actress.png"
+              src="/images/actor_clapper_actress.png"
               alt="Actress with Clapperboard"
               className="w-full h-auto object-cover"
               loading="lazy"
@@ -69,7 +69,7 @@ export default function StarplifyDiscovery() {
           {/* 2. Top Left: Woman in Leather Jacket */}
           <div className="absolute top-[22%] left-4 xl:left-10 pointer-events-auto w-44 xl:w-52 rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.85)] border border-white/15 hover:border-[#8233FF]/60 transition-transform duration-300 hover:scale-105 bg-black">
             <img
-              src="/images/figma/actor_leather_woman.png"
+              src="/images/actor_leather_woman.png"
               alt="Lead Drama Actress"
               className="w-full h-auto object-cover"
               loading="lazy"
@@ -79,7 +79,7 @@ export default function StarplifyDiscovery() {
           {/* 3. Top Right: Performer in Red Spotlight */}
           <div className="absolute top-[24%] right-4 xl:right-10 pointer-events-auto w-44 xl:w-52 rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.85)] border border-white/15 hover:border-[#8233FF]/60 transition-transform duration-300 hover:scale-105 bg-black">
             <img
-              src="/images/figma/actor_red_spotlight.png"
+              src="/images/actor_red_spotlight.png"
               alt="Cinema Lead in Red Spotlight"
               className="w-full h-auto object-cover"
               loading="lazy"
@@ -89,7 +89,7 @@ export default function StarplifyDiscovery() {
           {/* 4. Bottom Left: Actor in Beige Trench Coat */}
           <div className="absolute bottom-10 left-6 xl:left-16 pointer-events-auto w-48 xl:w-56 rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.85)] border border-white/15 hover:border-[#8233FF]/60 transition-transform duration-300 hover:scale-105 bg-black">
             <img
-              src="/images/figma/actor_beige_man.png"
+              src="/images/actor_beige_man.png"
               alt="Actor in Beige Trench Coat"
               className="w-full h-auto object-cover"
               loading="lazy"
@@ -99,7 +99,7 @@ export default function StarplifyDiscovery() {
           {/* 5. Bottom Center: Smiling Actor in Black Jacket */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 pointer-events-auto w-52 xl:w-60 rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.85)] border border-white/15 hover:border-[#8233FF]/60 transition-transform duration-300 hover:scale-105 bg-black">
             <img
-              src="/images/figma/actor_center_man.png"
+              src="/images/actor_center_man.png"
               alt="Smiling Actor in Black Jacket"
               className="w-full h-auto object-cover"
               loading="lazy"
@@ -109,7 +109,7 @@ export default function StarplifyDiscovery() {
           {/* 6. Bottom Right: Handsome Actor in Black Suit */}
           <div className="absolute bottom-10 right-6 xl:right-16 pointer-events-auto w-44 xl:w-52 rounded-2xl overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.85)] border border-white/15 hover:border-[#8233FF]/60 transition-transform duration-300 hover:scale-105 bg-black">
             <img
-              src="/images/figma/actor_black_suit.png"
+              src="/images/actor_black_suit.png"
               alt="Feature Film Performer in Black Suit"
               className="w-full h-auto object-cover"
               loading="lazy"

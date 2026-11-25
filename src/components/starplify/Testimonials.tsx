@@ -17,7 +17,7 @@ const COL1_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       "Joining Starplify opened doors to audition pipelines I never thought I could have. Now, I'm ready to take on any challenge that comes my way!",
-    avatar: '/images/figma/avatar_priya.png',
+    avatar: '/images/avatar_priya.png',
   },
   {
     name: 'AMIT ROY',
@@ -25,7 +25,7 @@ const COL1_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'I was initially intimidated, but the workshops provided by Starplify were engaging and informative. I gained the skills and confidence to pursue roles I thought were out of reach!',
-    avatar: '/images/figma/avatar_aisha.png',
+    avatar: '/images/avatar_aisha.png',
   },
   {
     name: 'MEERA IYER',
@@ -33,7 +33,7 @@ const COL1_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'Finding quality auditions used to take weeks of networking. With Starplify, casting directors reach out directly with roles that match my profile.',
-    avatar: '/images/figma/avatar_dev.png',
+    avatar: '/images/avatar_dev.png',
   },
 ];
 
@@ -44,7 +44,7 @@ const COL2_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'Joining Starplify transformed my approach to storytelling; I learned how to weave cultural nuances into my narratives, making them richer and more engaging.',
-    avatar: '/images/figma/avatar_anil.png',
+    avatar: '/images/avatar_anil.png',
   },
   {
     name: 'RAVI SHARMA',
@@ -52,7 +52,7 @@ const COL2_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'Joining Starplify has been a game-changer for my dance career. The tutorials offered are not only comprehensive but also tailored to suit diverse styles, including classical Indian forms.',
-    avatar: '/images/figma/avatar_ravi.png',
+    avatar: '/images/avatar_ravi.png',
   },
   {
     name: 'AISHA RAO',
@@ -60,7 +60,7 @@ const COL2_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       "The experience at Starplify has been incredibly enriching. I've had the chance to explore various art forms and showcase my talent, integrating traditional Indian crafts with modern techniques.",
-    avatar: '/images/figma/avatar_aisha.png',
+    avatar: '/images/avatar_aisha.png',
   },
 ];
 
@@ -71,7 +71,7 @@ const COL3_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'I learned how to incorporate traditional Indian elements into modern performances, enhancing my creativity and expression on stage.',
-    avatar: '/images/figma/avatar_sita.png',
+    avatar: '/images/avatar_sita.png',
   },
   {
     name: 'DEV PATEL',
@@ -79,7 +79,7 @@ const COL3_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'Participating in collaborative projects helped me blend different art styles, and I now create pieces that celebrate cultural diversity.',
-    avatar: '/images/figma/avatar_dev.png',
+    avatar: '/images/avatar_dev.png',
   },
   {
     name: 'KABIR DEOL',
@@ -87,7 +87,7 @@ const COL3_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'Starplify makes audition preparation intuitive. The casting breakdowns are precise, and direct feedback from casting directors has been invaluable.',
-    avatar: '/images/figma/avatar_anil.png',
+    avatar: '/images/avatar_anil.png',
   },
 ];
 
@@ -98,7 +98,7 @@ const COL1_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'Starplify has eliminated weeks of blind casting calls. We found the perfect ensemble cast for our upcoming drama series in under three days.',
-    avatar: '/images/figma/avatar_anil.png',
+    avatar: '/images/avatar_anil.png',
   },
 ];
 
@@ -109,7 +109,7 @@ const COL2_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'The verified headshots and standardized actor tapes make shortlisting effortless. The talent pool is diverse, professional, and audit-ready.',
-    avatar: '/images/figma/avatar_priya.png',
+    avatar: '/images/avatar_priya.png',
   },
 ];
 
@@ -120,7 +120,7 @@ const COL3_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'Finding bilingual actors with stage experience used to be difficult. Starplify gave us instant access to top-tier audition profiles.',
-    avatar: '/images/figma/avatar_dev.png',
+    avatar: '/images/avatar_dev.png',
   },
 ];
 
