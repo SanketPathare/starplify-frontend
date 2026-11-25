@@ -9,15 +9,6 @@ export default function StarplifyCtaBanner() {
     <section id="for-casting-directors" className="relative isolate scroll-mt-20 bg-[#080808]">
       <div id="cta-banner" className="scroll-mt-24" />
 
-      {/* Background Architectural Grid Lines */}
-      <div className="absolute inset-0 pointer-events-none z-[1] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 divide-y-0 md:divide-x divide-white/[0.06]" aria-hidden="true">
-        <div className="border-l border-white/[0.06] h-full" />
-        <div className="h-full" />
-        <div className="border-r border-white/[0.06] h-full" />
-      </div>
-      <div className="absolute inset-y-0 left-4 sm:left-8 xl:left-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
-      <div className="absolute inset-y-0 right-4 sm:right-8 xl:right-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
-
       {/* Inner Banner Container with Video Background (Exact Reference Design) */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
         <div className="relative isolate rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl min-h-[440px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[600px] flex flex-col justify-between p-6 sm:p-10 md:p-12 lg:p-14">
@@ -85,7 +76,7 @@ export default function StarplifyCtaBanner() {
       </div>
 
       {/* Bottom 35mm Film Sprocket Perforation Strip with Circular Black Holes (Exact Reference) */}
-      <FilmPerforations count={36} />
+      <FilmPerforations count={48} />
     </section>
   );
 }

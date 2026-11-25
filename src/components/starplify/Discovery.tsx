@@ -40,15 +40,6 @@ export default function StarplifyDiscovery() {
   return (
     <section id="explore-talent" className="relative isolate py-20 sm:py-24 lg:py-28 bg-[#000000] overflow-hidden scroll-mt-20">
       
-      {/* Background Architectural Grid Lines */}
-      <div className="absolute inset-0 pointer-events-none z-[1] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 divide-y-0 md:divide-x divide-white/[0.05]" aria-hidden="true">
-        <div className="border-l border-white/[0.05] h-full" />
-        <div className="h-full" />
-        <div className="border-r border-white/[0.05] h-full" />
-      </div>
-      <div className="absolute inset-y-0 left-4 sm:left-8 xl:left-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
-      <div className="absolute inset-y-0 right-4 sm:right-8 xl:right-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
-
       {/* Radiant Violet Spotlight Beam with Right Cone Flare (Exact Reference Asset Match) */}
       <div className="absolute inset-0 pointer-events-none -z-0 overflow-hidden" aria-hidden="true">
         <svg
@@ -148,22 +139,22 @@ export default function StarplifyDiscovery() {
 
         {/* Center Typography & CTA Button */}
         <div className="text-center max-w-2xl mx-auto relative z-20 py-12 sm:py-16 px-2">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl  font-bold uppercase text-white tracking-tight leading-[1.12] font-sans">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-bold uppercase text-white tracking-tight leading-[1.12] font-sans">
             UNLOCK AUDITIONS &amp; DISCOVER <br />
             10,000+ ACTORS TAILORED TO <br />
             YOUR REQUIREMENTS
           </h2>
 
-          <p className="mt-5 text-xs sm:text-sm text-[#A1A1AA] font-mono leading-relaxed max-w-lg mx-auto">
-            Login to access casting calls, view complete actor portfolios, watch audition videos, and shortlist the right talent with ease.
+          <p className="mt-5 text-xs sm:text-sm text-[#A1A1AA] font-mono uppercase tracking-wider leading-relaxed max-w-xl mx-auto">
+            LOGIN TO ACCESS CASTING CALLS, VIEW COMPLETE ACTOR PORTFOLIOS, HEAR AUDITIONS - EVERYTHING TO MAKE CASTING AS EASY AND SWIFT AS A SCENE CUT.
           </p>
 
           <div className="mt-8 flex justify-center">
             <a
-              href="#filmstrip"
+              href="#for-casting-directors"
               className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[6px] bg-white hover:bg-white/95 text-[#8233FF] font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-md active:scale-95 group"
             >
-              <span>BROWSE AUDITIONS</span>
+              <span>POST AUDITIONS</span>
               <UserSearch className="w-4 h-4 text-[#8233FF]" />
             </a>
           </div>

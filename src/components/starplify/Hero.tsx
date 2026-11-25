@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { UserSearch } from 'lucide-react';
+import { UserSearch, Plus } from 'lucide-react';
 
 export default function StarplifyHero() {
   return (
@@ -27,24 +27,14 @@ export default function StarplifyHero() {
           />
         </video>
         {/* Soft Dark Vignette Tint: clapperboard and studio lights remain crisp and legible */}
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-black/10" />
       </div>
-
-      {/* Architectural Background Vertical Grid Lines (Exact alignment with metrics columns) */}
-      <div className="absolute inset-0 pointer-events-none z-[1] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 divide-y-0 md:divide-x divide-white/[0.08]" aria-hidden="true">
-        <div className="border-l border-white/[0.08] h-full" />
-        <div className="h-full" />
-        <div className="border-r border-white/[0.08] h-full" />
-      </div>
-      {/* Outer edge architectural margin lines */}
-      <div className="absolute inset-y-0 left-4 sm:left-8 xl:left-14 w-px bg-white/[0.05] pointer-events-none z-[1]" aria-hidden="true" />
-      <div className="absolute inset-y-0 right-4 sm:right-8 xl:right-14 w-px bg-white/[0.05] pointer-events-none z-[1]" aria-hidden="true" />
 
       {/* Main Content Area */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-10">
         
         {/* Main Hero Headline (Frame 1321319014) */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.25rem] font-bold uppercase text-white tracking-tight leading-[1.1] max-w-4xl mx-auto font-sans">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold uppercase text-white tracking-tight leading-[1.1] max-w-4xl mx-auto ">
           BECAUSE YOUR TALENT <br className="hidden sm:inline" />
           DESERVES THE SPOTLIGHT.
         </h1>
@@ -62,8 +52,8 @@ export default function StarplifyHero() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[6px] bg-[#8233FF] hover:bg-[#9353FF] text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-[0_0_25px_rgba(130,51,255,0.4)] group active:scale-95"
           >
             <span>JOIN AS ACTOR</span>
-            <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#8233FF] font-bold text-xs">
-              +
+            <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#8233FF]">
+              <Plus className="w-3.5 h-3.5 text-[#8233FF] stroke-[3]" />
             </span>
           </a>
 

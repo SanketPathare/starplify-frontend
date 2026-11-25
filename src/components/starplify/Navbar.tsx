@@ -2,12 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import StarplifyLogo from './StarplifyLogo';
-import { Menu, X, User } from 'lucide-react';
+import { Menu, X, User, Plus } from 'lucide-react';
 
 const NAV_LINKS = [
   { name: 'HOME', href: '#hero' },
-  { name: 'ABOUT', href: '#about' },
-  { name: 'EXPLORE TALENT', href: '#explore-talent' },
+  { name: 'ABOUT STARPLIFY', href: '#about' },
   { name: 'HOW IT WORKS', href: '#how-it-works' },
   { name: 'SUCCESS STORIES', href: '#success-stories' },
   { name: 'FOR CASTING DIRECTORS', href: '#for-casting-directors' },
@@ -109,8 +108,8 @@ export default function StarplifyNavbar() {
                 className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#8233FF] text-white font-bold text-xs tracking-wider uppercase"
               >
                 <span>JOIN AS ACTOR</span>
-                <span className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-[#8233FF] font-bold text-[10px]">
-                  +
+                <span className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-[#8233FF]">
+                  <Plus className="w-3 h-3 text-[#8233FF] stroke-[3]" />
                 </span>
               </a>
             </div>

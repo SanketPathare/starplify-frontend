@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, ChevronRight } from 'lucide-react';
+import { X, ChevronRight, Plus } from 'lucide-react';
 
 interface CategoryItem {
   id: string;
@@ -50,15 +50,6 @@ export default function StarplifyFilmStrip() {
       <div id="how-it-works" className="scroll-mt-24" />
       <div id="filmstrip" className="scroll-mt-24" />
 
-      {/* Architectural Background Vertical Grid Lines */}
-      <div className="absolute inset-0 pointer-events-none z-[1] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 divide-y-0 md:divide-x divide-white/[0.06]" aria-hidden="true">
-        <div className="border-l border-white/[0.06] h-full" />
-        <div className="h-full" />
-        <div className="border-r border-white/[0.06] h-full" />
-      </div>
-      <div className="absolute inset-y-0 left-4 sm:left-8 xl:left-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
-      <div className="absolute inset-y-0 right-4 sm:right-8 xl:right-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
-
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 sm:gap-14 lg:gap-16 items-center">
 
@@ -83,8 +74,8 @@ export default function StarplifyFilmStrip() {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[6px] bg-[#8233FF] hover:bg-[#9353FF] text-white font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-[0_0_20px_rgba(130,51,255,0.4)] group active:scale-95"
               >
                 <span>JOIN AS ACTOR</span>
-                <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#8233FF] font-bold text-xs">
-                  +
+                <span className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-[#8233FF]">
+                  <Plus className="w-3.5 h-3.5 text-[#8233FF] stroke-[3]" />
                 </span>
               </a>
             </div>

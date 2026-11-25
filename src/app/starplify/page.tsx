@@ -19,15 +19,6 @@ export const metadata: Metadata = {
 export default function StarplifyPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white selection:bg-[#8233FF] selection:text-white font-sans antialiased overflow-x-hidden">
-      {/* Background Architectural Grid Lines (matching Figma vertical layout grid) */}
-      <div className="architectural-grid" aria-hidden="true">
-        <div className="grid-line" />
-        <div className="grid-line" />
-        <div className="grid-line" />
-        <div className="grid-line" />
-        <div className="grid-line" />
-      </div>
-
       <StarplifyNavbar />
 
       <main className="relative z-10">

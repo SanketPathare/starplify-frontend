@@ -5,13 +5,13 @@ interface FilmPerforationsProps {
   count?: number;
 }
 
-export default function FilmPerforations({ className = '', count = 36 }: FilmPerforationsProps) {
+export default function FilmPerforations({ className = '', count = 48 }: FilmPerforationsProps) {
   return (
     <div
       className={`w-full overflow-hidden bg-white py-2 sm:py-2.5 flex items-center justify-between select-none ${className}`}
       aria-hidden="true"
     >
-      <div className="flex w-full justify-between items-center px-3 sm:px-4 gap-2 sm:gap-3 overflow-hidden">
+      <div className="flex w-full justify-between items-center px-2 sm:px-4 gap-1.5 sm:gap-2.5 overflow-hidden">
         {Array.from({ length: count }).map((_, i) => (
           <div
             key={i}
