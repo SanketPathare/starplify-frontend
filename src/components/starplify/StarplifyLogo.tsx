@@ -6,13 +6,13 @@ interface StarplifyLogoProps {
   size?: 'sm' | 'default' | 'lg';
 }
 
-export default function StarplifyLogo({ className = '', size = 'default' }: StarplifyLogoProps) {
-  const heightClass = {
-    sm: 'h-8 sm:h-9',
-    default: 'h-9 sm:h-10 md:h-11',
-    lg: 'h-11 sm:h-12 md:h-14',
-  }[size];
+const SIZE_CLASSES: Record<NonNullable<StarplifyLogoProps['size']>, string> = {
+  sm: 'h-9 w-auto',
+  default: 'h-11 sm:h-12 w-auto',
+  lg: 'h-14 sm:h-16 w-auto',
+};
 
+export default function StarplifyLogo({ className = '', size = 'default' }: StarplifyLogoProps) {
   return (
     <Link
       href="/"
@@ -22,9 +22,9 @@ export default function StarplifyLogo({ className = '', size = 'default' }: Star
       <img
         src="/images/starplify-logo.png"
         alt="Starplify - amplifying stardom"
-        className={`${heightClass} w-auto object-contain transition-opacity group-hover:opacity-90`}
+        className={`${SIZE_CLASSES[size]} object-contain transition-opacity group-hover:opacity-90`}
         loading="eager"
       />
     </Link>
-  );
+  );  
 }

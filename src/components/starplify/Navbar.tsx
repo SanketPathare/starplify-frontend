@@ -6,7 +6,8 @@ import { Menu, X, User, Plus } from 'lucide-react';
 
 const NAV_LINKS = [
   { name: 'HOME', href: '#hero' },
-  { name: 'ABOUT STARPLIFY', href: '#about' },
+  { name: 'ABOUT', href: '#about' },
+  { name: 'EXPLORE TALENT', href: '#explore-talent' },
   { name: 'HOW IT WORKS', href: '#how-it-works' },
   { name: 'SUCCESS STORIES', href: '#success-stories' },
   { name: 'FOR CASTING DIRECTORS', href: '#for-casting-directors' },
@@ -39,7 +40,7 @@ export default function StarplifyNavbar() {
           <StarplifyLogo />
 
           {/* Desktop Navigation Links (Matching Screenshot & Figma Frame 1) */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
             {NAV_LINKS.map((link) => {
               const isCurrent = activeSection === link.name;
               return (
@@ -47,10 +48,10 @@ export default function StarplifyNavbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setActiveSection(link.name)}
-                  className={`text-md tracking-wider font-bold transition-all px-2 py-1 ${
+                  className={`text-xs font-mono tracking-wider font-medium transition-all px-1.5 py-1 whitespace-nowrap ${
                     isCurrent
-                      ? 'text-[#9353FF] font-extrabold'
-                      : 'text-white  hover:text-white'
+                      ? 'text-[#9353FF] font-bold'
+                      : 'text-white/90 hover:text-white'
                   }`}
                 >
                   {link.name}
