@@ -48,11 +48,11 @@ export default function StarplifyFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="colophon" className="relative bg-[#000000] text-[#A1A1AA] pt-12 overflow-hidden border-t border-white/[0.08]">
+    <footer id="colophon" className="relative bg-[#000000] text-[#A1A1AA] pt-10 sm:pt-12 overflow-hidden border-t border-white/[0.08]">
       
       {/* Centered Content Container (Exact Figma Frame 15) */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12">
           
           {/* Brand Info & Mission (Col 1-5) */}
           <div className="lg:col-span-5 flex flex-col justify-between">
@@ -74,7 +74,7 @@ export default function StarplifyFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={soc.name}
-                    className="w-8 h-8 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-[#8233FF] hover:border-[#8233FF] transition-all"
+                    className="w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-white/[0.05] border border-white/10 flex items-center justify-center text-white/80 hover:text-white hover:bg-[#8233FF] hover:border-[#8233FF] transition-all"
                   >
                     <IconComponent className="w-3.5 h-3.5" />
                   </a>
@@ -84,7 +84,7 @@ export default function StarplifyFooter() {
           </div>
 
           {/* Links Columns (Col 6-12) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8">
             
             {/* Column 1: COMPANY */}
             <div>

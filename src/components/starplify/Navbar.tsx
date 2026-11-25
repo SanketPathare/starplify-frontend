@@ -29,9 +29,11 @@ export default function StarplifyNavbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-black/5 backdrop-blur-lg py-3.5'
-          : 'bg-transparent py-5 sm:py-6'
+        mobileMenuOpen
+          ? 'bg-black/90 backdrop-blur-lg py-2.5 sm:py-3'
+          : isScrolled
+            ? 'bg-black/5 backdrop-blur-lg py-2.5 sm:py-3'
+            : 'bg-transparent py-3 sm:py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -40,7 +42,7 @@ export default function StarplifyNavbar() {
           <StarplifyLogo />
 
           {/* Desktop Navigation Links (Matching Screenshot & Figma Frame 1) */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {NAV_LINKS.map((link) => {
               const isCurrent = activeSection === link.name;
               return (
@@ -48,7 +50,7 @@ export default function StarplifyNavbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setActiveSection(link.name)}
-                  className={`text-xs font-mono tracking-wider font-medium transition-all px-1.5 py-1 whitespace-nowrap ${
+                  className={`text-sm font-mono tracking-[0.08em] font-medium transition-all px-1.5 py-1 whitespace-nowrap ${
                     isCurrent
                       ? 'text-[#9353FF] font-bold'
                       : 'text-white/90 hover:text-white'
@@ -65,15 +67,15 @@ export default function StarplifyNavbar() {
             <a
               href="#profile"
               aria-label="User Account"
-              className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-black hover:opacity-90 transition-opacity shadow-sm"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center text-black hover:opacity-90 transition-opacity shadow-sm"
             >
-              <User className="w-4 h-4 text-black" strokeWidth={2.5} />
+              <User className="w-5 h-5 text-black" strokeWidth={2.5} />
             </a>
 
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+              className="lg:hidden p-2.5 rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -83,7 +85,7 @@ export default function StarplifyNavbar() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-3 p-4 bg-[#0e0e14]/95 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-2xl flex flex-col gap-2">
+          <div className="lg:hidden mt-3 p-4 bg-[#0e0e14]/95 border border-white/10 rounded-2xl shadow-2xl backdrop-blur-2xl flex flex-col gap-1.5">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.name}
@@ -92,7 +94,7 @@ export default function StarplifyNavbar() {
                   setActiveSection(link.name);
                   setMobileMenuOpen(false);
                 }}
-                className={`text-xs tracking-wider font-bold px-4 py-3 rounded-xl transition-all ${
+                className={`text-sm font-mono tracking-wider font-bold px-4 py-3 rounded-xl transition-all ${
                   activeSection === link.name
                     ? 'bg-[#8233FF] text-white shadow-md'
                     : 'text-[#C4C4CC] hover:bg-white/5 hover:text-white'
@@ -106,7 +108,7 @@ export default function StarplifyNavbar() {
               <a
                 href="#explore-talent"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#8233FF] text-white font-bold text-xs tracking-wider uppercase"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#8233FF] text-white font-bold text-sm tracking-wider uppercase"
               >
                 <span>JOIN AS ACTOR</span>
                 <span className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-[#8233FF]">

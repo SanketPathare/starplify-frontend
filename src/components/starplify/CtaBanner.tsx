@@ -10,8 +10,8 @@ export default function StarplifyCtaBanner() {
       <div id="cta-banner" className="scroll-mt-24" />
 
       {/* Inner Banner Container with Video Background (Exact Reference Design) */}
-      <div className="max-w-8xl mx-auto  relative z-10">
-        <div className="relative isolate  overflow-hidden border border-white/10 bg-black shadow-2xl min-h-[440px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[600px] flex flex-col justify-between p-6 sm:p-10 md:p-12 lg:p-14">
+      <div className="max-w-8xl mx-auto relative z-10">
+        <div className="relative isolate overflow-hidden border border-white/10 bg-black shadow-2xl min-h-[380px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[600px] flex flex-col justify-between p-5 sm:p-10 md:p-12 lg:p-14">
 
           {/* Cinematic Behind-the-Scenes Filmmaking Video Background */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
@@ -43,9 +43,9 @@ export default function StarplifyCtaBanner() {
           </div>
 
           {/* Center Top Content: Headline, Monospace Subtitle & Button */}
-          <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto pt-2 sm:pt-4">
+          <div className="relative z-10 flex flex-col items-center text-center max-w-2xl mx-auto pt-2 sm:pt-4 w-full">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.65rem] font-bold uppercase text-white tracking-tight leading-[1.12] font-sans">
-              CASTING MADE SIMPLE &amp; <br />
+              CASTING MADE SIMPLE &amp; <br className="hidden sm:inline" />
               EFFICIENT
             </h2>
 
@@ -53,10 +53,10 @@ export default function StarplifyCtaBanner() {
               Discover, evaluate, and connect with actors who match your requirements — all in one streamlined platform.
             </p>
 
-            <div className="mt-7 sm:mt-8">
+            <div className="mt-6 sm:mt-8 w-full sm:w-auto max-w-xs sm:max-w-none">
               <a
                 href="#filmstrip"
-                className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[6px] bg-white hover:bg-white/95 text-[#8233FF] font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-md active:scale-95 group"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-[6px] bg-white hover:bg-white/95 text-[#8233FF] font-bold text-xs sm:text-sm tracking-wider uppercase transition-all shadow-md active:scale-95 group"
               >
                 <span>BROWSE AUDITIONS</span>
                 <UserSearch className="w-4 h-4 text-[#8233FF]" />
@@ -65,9 +65,9 @@ export default function StarplifyCtaBanner() {
           </div>
 
           {/* Bottom Right Content: CONNECT WITH THE RIGHT TALENT */}
-          <div className="relative z-10 self-end text-right mt-14 sm:mt-20">
+          <div className="relative z-10 self-center sm:self-end text-center sm:text-right mt-10 sm:mt-20">
             <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-[2.25rem] font-bold uppercase text-white tracking-tight leading-tight font-sans">
-              CONNECT WITH THE RIGHT <br />
+              CONNECT WITH THE RIGHT <br className="hidden sm:inline" />
               TALENT
             </h3>
           </div>

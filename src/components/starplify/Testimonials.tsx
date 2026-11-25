@@ -8,7 +8,7 @@ interface ReviewItem {
   role: string;
   rating: number;
   quote: string;
-  avatar: string;
+  avatar?: string;
 }
 
 const COL1_ACTORS: ReviewItem[] = [
@@ -26,7 +26,7 @@ const COL1_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'The feedback I received on my compositions was invaluable. Starplify allowed me to collaborate with other musicians, leading to the fusion of traditional Indian music with contemporary genres.',
-    avatar: '/images/avatar_arjun_patil.jpg',
+    avatar: '/images/avatar_arjun_patil.png',
   },
   {
     name: 'KABIR SHARMA',
@@ -34,7 +34,6 @@ const COL1_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'Through workshops focused on performance and expression, I learned how to bring depth to my characters, drawing inspiration from classical Indian storytelling.',
-    avatar: '/images/avatar_kabir.jpg',
   },
 ];
 
@@ -61,7 +60,6 @@ const COL2_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       "The experience at Starplify has been incredibly enriching. I've had the chance to explore various art forms and showcase my talent, integrating traditional Indian crafts with modern techniques.",
-    avatar: '/images/avatar_aisha.png',
   },
 ];
 
@@ -88,7 +86,6 @@ const COL3_ACTORS: ReviewItem[] = [
     rating: 4,
     quote:
       'Participating in collaborative projects helped me blend different art styles, and I now create pieces that celebrate cultural diversity.',
-    avatar: '/images/avatar_neha.jpg',
   },
 ];
 
@@ -99,7 +96,7 @@ const COL1_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'Starplify has eliminated weeks of blind casting calls. We found the perfect ensemble cast for our upcoming drama series in under three days.',
-    avatar: '/images/avatar_sanjay.jpg',
+    avatar: '/images/avatar_sanjay.png',
   },
   {
     name: 'ARJUN PATIL',
@@ -107,7 +104,7 @@ const COL1_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'Filter by dialect, screen age, and availability in seconds. Our ad agency now sources 90% of our on-camera talent directly through Starplify.',
-    avatar: '/images/avatar_arjun_patil.jpg',
+    avatar: '/images/avatar_arjun_patil.png',
   },
 ];
 
@@ -118,7 +115,6 @@ const COL2_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'The verified headshots and standardized actor tapes make shortlisting effortless. The talent pool is diverse, professional, and audition-ready.',
-    avatar: '/images/avatar_kavita.jpg',
   },
   {
     name: 'NEHA KAPOOR',
@@ -126,7 +122,6 @@ const COL2_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'We discovered three breakthrough leads for our web series from regional theatre backgrounds we would have otherwise missed.',
-    avatar: '/images/avatar_neha.jpg',
   },
 ];
 
@@ -137,7 +132,6 @@ const COL3_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'Finding bilingual actors with stage experience used to be difficult. Starplify gave us instant access to top-tier audition profiles.',
-    avatar: '/images/avatar_rohit.jpg',
   },
   {
     name: 'KABIR SHARMA',
@@ -145,14 +139,23 @@ const COL3_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'Audition scheduling and callback notes live in one place. It has transformed how our casting team collaborates across cities.',
-    avatar: '/images/avatar_kabir.jpg',
   },
 ];
+
+function getInitials(name: string): string {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join('')
+    .toUpperCase();
+}
 
 function ReviewCell({ t, borderBottom = true }: { t: ReviewItem; borderBottom?: boolean }) {
   return (
     <div
-      className={`p-6 sm:p-8 flex flex-col justify-between ${
+      className={`p-5 sm:p-8 flex flex-col justify-between ${
         borderBottom ? 'border-b border-white/[0.08]' : ''
       } hover:bg-white/[0.02] transition-colors`}
     >
@@ -175,13 +178,19 @@ function ReviewCell({ t, borderBottom = true }: { t: ReviewItem; borderBottom?: 
       </div>
 
       <div className="flex items-center gap-3.5 pt-1">
-        <div className="w-10 h-10 rounded-full overflow-hidden border border-white/15 flex-shrink-0 bg-neutral-900">
-          <img
-            src={t.avatar}
-            alt={t.name}
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
+        <div className="w-10 h-10 rounded-full overflow-hidden border border-white/15 flex-shrink-0 bg-[#181822] flex items-center justify-center">
+          {t.avatar ? (
+            <img
+              src={t.avatar}
+              alt={t.name}
+              className="w-full h-full object-cover scale-110"
+              loading="lazy"
+            />
+          ) : (
+            <span className="text-xs font-mono font-bold text-[#C4B5FD]">
+              {getInitials(t.name)}
+            </span>
+          )}
         </div>
         <div>
           <h4 className="text-xs font-bold font-mono tracking-wider uppercase text-white">
@@ -206,7 +215,7 @@ export default function StarplifyTestimonials() {
   return (
     <section
       id="success-stories"
-      className="relative py-20 sm:py-24 lg:py-28 bg-[#000000] text-white overflow-hidden scroll-mt-20"
+      className="relative py-14 sm:py-24 lg:py-28 bg-[#000000] text-white overflow-hidden scroll-mt-20"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Continuous 3-Column Architectural Vertical Grid Lines */}
@@ -223,11 +232,11 @@ export default function StarplifyTestimonials() {
           </div>
 
           {/* Top Header Area (Spans across grid, left-aligned) */}
-          <div className="relative z-10 px-6 sm:px-8 pt-4 pb-8 sm:pb-10">
+          <div className="relative z-10 px-5 sm:px-8 pt-4 pb-6 sm:pb-10">
             <h2 className="text-2xl sm:text-3xl lg:text-[2rem] font-bold uppercase tracking-tight text-white font-sans leading-tight">
               WHAT ACTORS ARE SAYING
             </h2>
-            <p className="mt-4 max-w-xl text-xs sm:text-sm font-mono text-[#A1A1AA] leading-relaxed">
+            <p className="mt-3 sm:mt-4 max-w-xl text-xs sm:text-sm font-mono text-[#A1A1AA] leading-relaxed">
               From first auditions to real opportunities — hear how actors are getting discovered and growing their careers with Starplify.
             </p>
           </div>
@@ -237,7 +246,7 @@ export default function StarplifyTestimonials() {
             {/* Column 1: Toggle Switch + Reviews */}
             <div className="flex flex-col">
               {/* Toggle Switch Bar */}
-              <div className="px-6 sm:px-8 pb-8">
+              <div className="px-5 sm:px-8 pb-6 sm:pb-8">
                 <div className="grid grid-cols-2 rounded bg-[#0c0c10] border border-white/[0.06] p-1">
                   <button
                     type="button"

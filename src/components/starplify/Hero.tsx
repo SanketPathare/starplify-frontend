@@ -5,7 +5,7 @@ import { UserSearch, Plus } from 'lucide-react';
 
 export default function StarplifyHero() {
   return (
-    <section id="hero" className="relative isolate pt-28 pb-12 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-16 overflow-hidden scroll-mt-20">
+    <section id="hero" className="relative isolate pt-24 pb-10 sm:pt-36 sm:pb-16 lg:pt-40 lg:pb-16 overflow-hidden scroll-mt-20">
       
       {/* Cinematic Audition Set Video Background with Fallback Photo (Frame 1) */}
       <div className="absolute inset-0 -z-10 bg-[#080808] pointer-events-none overflow-hidden" aria-hidden="true">
@@ -31,21 +31,21 @@ export default function StarplifyHero() {
       </div>
 
       {/* Main Content Area */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-6 sm:py-10">
         
         {/* Main Hero Headline (Frame 1321319014) */}
-        <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] font-bold uppercase text-white tracking-tight leading-[1.1] max-w-4xl mx-auto ">
+        <h1 className="text-[1.75rem] sm:text-5xl md:text-6xl lg:text-[4rem] font-bold uppercase text-white tracking-tight leading-[1.12] max-w-4xl mx-auto">
           BECAUSE YOUR TALENT <br className="hidden sm:inline" />
           DESERVES THE SPOTLIGHT.
         </h1>
 
         {/* Editorial Subheadline (Figma Typewriter Monospace) */}
-        <p className="mt-5 sm:mt-6 text-xs sm:text-sm md:text-base text-[#C4C4CC] max-w-xl mx-auto leading-relaxed font-mono">
+        <p className="mt-4 sm:mt-6 text-xs sm:text-sm md:text-base text-[#C4C4CC] max-w-xl mx-auto leading-relaxed font-mono">
           From auditions to final casting – streamline your entire journey with a platform designed for actors and recruiters.
         </p>
 
         {/* Dual Action CTA Buttons (Exact Figma Frame 1321319014) */}
-        <div className="mt-8 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-sm sm:max-w-none mx-auto w-full">
+        <div className="mt-7 sm:mt-9 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 max-w-xs sm:max-w-none mx-auto w-full">
           {/* Primary CTA: JOIN AS ACTOR */}
           <a
             href="#explore-talent"
@@ -69,9 +69,9 @@ export default function StarplifyHero() {
       </div>
 
       {/* Full-width Horizontal Divider Line intersecting vertical grid lines */}
-      <div className="relative z-10 w-full border-t border-white/10 mt-16 sm:mt-20">
+      <div className="relative z-10 w-full border-t border-white/10 mt-10 sm:mt-16 md:mt-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10 pt-8 pb-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-white/10 pt-6 sm:pt-8 pb-2 sm:pb-3">
             <div className="flex flex-col items-center text-center px-4">
               <div className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold font-sans tracking-tight text-white mb-2 leading-none">
                 10,000+

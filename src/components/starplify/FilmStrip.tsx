@@ -46,7 +46,7 @@ export default function StarplifyFilmStrip() {
   const [activePreview, setActivePreview] = useState<CategoryItem | null>(null);
 
   return (
-    <section id="about" className="relative py-20 sm:py-28 lg:py-32 bg-[#080808] overflow-hidden scroll-mt-20">
+    <section id="about" className="relative py-14 sm:py-24 lg:py-32 bg-[#080808] overflow-hidden scroll-mt-20">
       <div id="how-it-works" className="scroll-mt-24" />
       <div id="filmstrip" className="scroll-mt-24" />
 
@@ -55,8 +55,8 @@ export default function StarplifyFilmStrip() {
 
           {/* Left Column Narrative (Exact Reference Layout) */}
           <div className="lg:col-span-6 flex flex-col items-start text-left">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] font-bold uppercase text-white tracking-tight leading-[1.08] font-sans">
-              MADE FOR ACTORS WHO WANT TO <br />
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl xl:text-[3.25rem] font-bold uppercase text-white tracking-tight leading-[1.08] font-sans">
+              MADE FOR ACTORS WHO WANT TO <br className="hidden sm:inline" />
               BE SEEN
             </h2>
 
@@ -86,17 +86,17 @@ export default function StarplifyFilmStrip() {
             <div className="relative bg-[#080808] flex items-stretch w-full max-w-[460px] sm:max-w-[490px] shadow-2xl rounded-none select-none overflow-hidden">
 
               {/* Left Solid White Vertical Strip with Circular Black Sprocket Holes */}
-              <div className="w-5 sm:w-6 bg-white flex flex-col justify-between items-center py-2.5 select-none flex-shrink-0" aria-hidden="true">
+              <div className="w-4 sm:w-6 bg-white flex flex-col justify-between items-center py-2 sm:py-2.5 select-none flex-shrink-0" aria-hidden="true">
                 {Array.from({ length: 16 }).map((_, i) => (
                   <div
                     key={i}
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#080808] my-0.5 sm:my-1"
+                    className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#080808] my-0.5 sm:my-1"
                   />
                 ))}
               </div>
 
               {/* 2x2 Grid of High-Resolution Genre Cards */}
-              <div className="flex-1 grid grid-cols-2 gap-3 sm:gap-4 p-2.5 sm:p-3.5 bg-[#080808]">
+              <div className="flex-1 grid grid-cols-2 gap-2.5 sm:gap-4 p-2 sm:p-3.5 bg-[#080808]">
                 {CATEGORIES.map((cat) => (
                   <div
                     key={cat.id}
@@ -114,8 +114,8 @@ export default function StarplifyFilmStrip() {
                     </div>
 
                     {/* Card Title & White Circular Arrow Button (Exact Reference Design) */}
-                    <div className="flex items-center justify-between pt-2.5 pb-1 px-1">
-                      <span className="font-bold text-xs sm:text-sm tracking-wider uppercase text-white font-sans">
+                    <div className="flex items-center justify-between pt-2 sm:pt-2.5 pb-1 px-0.5 sm:px-1 gap-1">
+                      <span className="font-bold text-[11px] sm:text-sm tracking-wider uppercase text-white font-sans truncate">
                         {cat.title}
                       </span>
                       <div className="w-5 h-5 rounded-full bg-white flex items-center justify-center text-black font-bold group-hover:bg-[#8233FF] group-hover:text-white transition-colors flex-shrink-0">
@@ -127,11 +127,11 @@ export default function StarplifyFilmStrip() {
               </div>
 
               {/* Right Solid White Vertical Strip with Circular Black Sprocket Holes */}
-              <div className="w-5 sm:w-6 bg-white flex flex-col justify-between items-center py-2.5 select-none flex-shrink-0" aria-hidden="true">
+              <div className="w-4 sm:w-6 bg-white flex flex-col justify-between items-center py-2 sm:py-2.5 select-none flex-shrink-0" aria-hidden="true">
                 {Array.from({ length: 16 }).map((_, i) => (
                   <div
                     key={i}
-                    className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-[#080808] my-0.5 sm:my-1"
+                    className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 rounded-full bg-[#080808] my-0.5 sm:my-1"
                   />
                 ))}
               </div>
@@ -180,7 +180,7 @@ export default function StarplifyFilmStrip() {
               {activePreview.description}
             </p>
 
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
               <a
                 href="#explore-talent"
                 onClick={() => setActivePreview(null)}

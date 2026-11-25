@@ -7,9 +7,9 @@ interface StarplifyLogoProps {
 }
 
 const SIZE_CLASSES: Record<NonNullable<StarplifyLogoProps['size']>, string> = {
-  sm: 'h-9 w-auto',
-  default: 'h-11 sm:h-12 w-auto',
-  lg: 'h-14 sm:h-16 w-auto',
+  sm: 'h-10 sm:h-11 w-auto',
+  default: 'h-12 sm:h-16 w-auto',
+  lg: 'h-16 sm:h-20 w-auto',
 };
 
 export default function StarplifyLogo({ className = '', size = 'default' }: StarplifyLogoProps) {
