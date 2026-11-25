@@ -10,9 +10,9 @@ export default function StarplifyCtaBanner() {
       <div id="cta-banner" className="scroll-mt-24" />
 
       {/* Inner Banner Container with Video Background (Exact Reference Design) */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
-        <div className="relative isolate rounded-2xl overflow-hidden border border-white/10 bg-black shadow-2xl min-h-[440px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[600px] flex flex-col justify-between p-6 sm:p-10 md:p-12 lg:p-14">
-          
+      <div className="max-w-8xl mx-auto  relative z-10">
+        <div className="relative isolate  overflow-hidden border border-white/10 bg-black shadow-2xl min-h-[440px] sm:min-h-[500px] md:min-h-[560px] lg:min-h-[600px] flex flex-col justify-between p-6 sm:p-10 md:p-12 lg:p-14">
+
           {/* Cinematic Behind-the-Scenes Filmmaking Video Background */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
             <video

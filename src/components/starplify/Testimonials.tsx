@@ -21,20 +21,20 @@ const COL1_ACTORS: ReviewItem[] = [
     avatar: '/images/avatar_meera.png',
   },
   {
-    name: 'AMIT ROY',
-    role: 'Short Film & OTT',
+    name: 'ARJUN PATIL',
+    role: 'TV Advertisement',
     rating: 4,
     quote:
-      'The feedback I received on my compositions was invaluable. Starplify allowed me to collaborate with visionary creators and turn my passion into a viable career.',
-    avatar: '/images/avatar_dev.png',
+      'The feedback I received on my compositions was invaluable. Starplify allowed me to collaborate with other musicians, leading to the fusion of traditional Indian music with contemporary genres.',
+    avatar: '/images/avatar_arjun_patil.jpg',
   },
   {
-    name: 'ARJUN KAPOOR',
-    role: 'Commercial & Theatre',
+    name: 'KABIR SHARMA',
+    role: 'Theatre & Film',
     rating: 4,
     quote:
-      "Through workshops, I've received professional instruction on acting techniques, audition etiquette, and managing my career as an artist.",
-    avatar: '/images/avatar_arjun.png',
+      'Through workshops focused on performance and expression, I learned how to bring depth to my characters, drawing inspiration from classical Indian storytelling.',
+    avatar: '/images/avatar_kabir.jpg',
   },
 ];
 
@@ -42,9 +42,9 @@ const COL2_ACTORS: ReviewItem[] = [
   {
     name: 'PRIYA SINGH',
     role: 'TV Advertisement',
-    rating: 0,
+    rating: 4,
     quote:
-      "thought I could have. Now, I'm ready to take on any challenge that comes my way!",
+      "Starplify gave me confidence I never thought I could have. Now, I'm ready to take on any challenge that comes my way!",
     avatar: '/images/avatar_priya.png',
   },
   {
@@ -83,12 +83,12 @@ const COL3_ACTORS: ReviewItem[] = [
     avatar: '/images/avatar_sita.png',
   },
   {
-    name: 'DEV PATEL',
+    name: 'NEHA KAPOOR',
     role: 'Cinema & Film',
     rating: 4,
     quote:
       'Participating in collaborative projects helped me blend different art styles, and I now create pieces that celebrate cultural diversity.',
-    avatar: '/images/avatar_dev.png',
+    avatar: '/images/avatar_neha.jpg',
   },
 ];
 
@@ -99,7 +99,15 @@ const COL1_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'Starplify has eliminated weeks of blind casting calls. We found the perfect ensemble cast for our upcoming drama series in under three days.',
-    avatar: '/images/avatar_anil.png',
+    avatar: '/images/avatar_sanjay.jpg',
+  },
+  {
+    name: 'ARJUN PATIL',
+    role: 'Commercial Producer',
+    rating: 4,
+    quote:
+      'Filter by dialect, screen age, and availability in seconds. Our ad agency now sources 90% of our on-camera talent directly through Starplify.',
+    avatar: '/images/avatar_arjun_patil.jpg',
   },
 ];
 
@@ -109,8 +117,16 @@ const COL2_RECRUITERS: ReviewItem[] = [
     role: 'Production Head, Dharma Digital',
     rating: 4,
     quote:
-      'The verified headshots and standardized actor tapes make shortlisting effortless. The talent pool is diverse, professional, and audit-ready.',
-    avatar: '/images/avatar_priya.png',
+      'The verified headshots and standardized actor tapes make shortlisting effortless. The talent pool is diverse, professional, and audition-ready.',
+    avatar: '/images/avatar_kavita.jpg',
+  },
+  {
+    name: 'NEHA KAPOOR',
+    role: 'Lead Talent Scout, OTT Originals',
+    rating: 4,
+    quote:
+      'We discovered three breakthrough leads for our web series from regional theatre backgrounds we would have otherwise missed.',
+    avatar: '/images/avatar_neha.jpg',
   },
 ];
 
@@ -121,7 +137,15 @@ const COL3_RECRUITERS: ReviewItem[] = [
     rating: 4,
     quote:
       'Finding bilingual actors with stage experience used to be difficult. Starplify gave us instant access to top-tier audition profiles.',
-    avatar: '/images/avatar_dev.png',
+    avatar: '/images/avatar_rohit.jpg',
+  },
+  {
+    name: 'KABIR SHARMA',
+    role: 'Theatre & Casting Associate',
+    rating: 4,
+    quote:
+      'Audition scheduling and callback notes live in one place. It has transformed how our casting team collaborates across cities.',
+    avatar: '/images/avatar_kabir.jpg',
   },
 ];
 
@@ -133,7 +157,6 @@ function ReviewCell({ t, borderBottom = true }: { t: ReviewItem; borderBottom?: 
       } hover:bg-white/[0.02] transition-colors`}
     >
       <div>
-        {/* Rating Stars (4 Gold Stars from Reference) */}
         {t.rating > 0 && (
           <div className="flex items-center gap-1.5 mb-5 text-[#FFB800]">
             {Array.from({ length: t.rating }).map((_, i) => (
@@ -146,15 +169,13 @@ function ReviewCell({ t, borderBottom = true }: { t: ReviewItem; borderBottom?: 
           </div>
         )}
 
-        {/* Monospace Review Quote */}
-        <p className="text-xs sm:text-sm font-mono text-[#D4D4D8] leading-relaxed mb-6">
+        <p className="text-xs sm:text-[13px] font-mono text-[#D4D4D8] leading-relaxed mb-6">
           {t.quote}
         </p>
       </div>
 
-      {/* Author Profile */}
-      <div className="flex items-center gap-3.5 pt-2">
-        <div className="w-9 h-9 rounded-full overflow-hidden border border-white/20 flex-shrink-0 bg-neutral-900">
+      <div className="flex items-center gap-3.5 pt-1">
+        <div className="w-10 h-10 rounded-full overflow-hidden border border-white/15 flex-shrink-0 bg-neutral-900">
           <img
             src={t.avatar}
             alt={t.name}
@@ -183,75 +204,98 @@ export default function StarplifyTestimonials() {
   const col3 = activeTab === 'ACTOR' ? COL3_ACTORS : COL3_RECRUITERS;
 
   return (
-    <section id="success-stories" className="py-20 sm:py-28 lg:py-32 bg-[#000000] text-white overflow-hidden scroll-mt-20">
-      
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section
+      id="success-stories"
+      className="relative py-20 sm:py-24 lg:py-28 bg-[#000000] text-white overflow-hidden scroll-mt-20"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Continuous 3-Column Architectural Vertical Grid Lines */}
+        <div
+          className="relative border-l border-r border-white/[0.08]"
+        >
+          <div
+            className="pointer-events-none absolute inset-0 grid grid-cols-1 md:grid-cols-3 divide-y-0 md:divide-x divide-white/[0.08]"
+            aria-hidden="true"
+          >
+            <div />
+            <div />
+            <div />
+          </div>
 
-        {/* 3-Column Architectural Grid Layout (Exact Match for Reference) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 border-t border-b border-l border-r border-white/[0.08] divide-y md:divide-y-0 md:divide-x divide-white/[0.08] bg-[#000000]">
-          
-          {/* Column 1: Header + Reviews */}
-          <div className="flex flex-col">
-            {/* Header Cell with Title, Monospace Paragraph & Toggle */}
-            <div className="p-6 sm:p-8 border-b border-white/[0.08] flex flex-col justify-between">
-              <div>
-                <h2 className="text-2xl sm:text-3xl lg:text-[2rem] font-bold uppercase tracking-tight text-white font-sans leading-tight">
-                  WHAT ACTORS ARE SAYING
-                </h2>
-                <p className="mt-4 text-xs sm:text-sm font-mono text-[#A1A1AA] leading-relaxed">
-                  From first auditions to real opportunities — hear how actors are getting discovered and growing their careers with Starplify.
-                </p>
-              </div>
+          {/* Top Header Area (Spans across grid, left-aligned) */}
+          <div className="relative z-10 px-6 sm:px-8 pt-4 pb-8 sm:pb-10">
+            <h2 className="text-2xl sm:text-3xl lg:text-[2rem] font-bold uppercase tracking-tight text-white font-sans leading-tight">
+              WHAT ACTORS ARE SAYING
+            </h2>
+            <p className="mt-4 max-w-xl text-xs sm:text-sm font-mono text-[#A1A1AA] leading-relaxed">
+              From first auditions to real opportunities — hear how actors are getting discovered and growing their careers with Starplify.
+            </p>
+          </div>
 
-              {/* Toggle Switch */}
-              <div className="mt-8">
-                <div className="inline-flex rounded-md bg-[#0e0e14] border border-white/10 p-1">
+          {/* 3-Column Staggered Masonry Grid */}
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-3">
+            {/* Column 1: Toggle Switch + Reviews */}
+            <div className="flex flex-col">
+              {/* Toggle Switch Bar */}
+              <div className="px-6 sm:px-8 pb-8">
+                <div className="grid grid-cols-2 rounded bg-[#0c0c10] border border-white/[0.06] p-1">
                   <button
+                    type="button"
                     onClick={() => setActiveTab('ACTOR')}
-                    className={`px-5 py-2 rounded text-xs font-mono font-bold tracking-wider transition-all ${
+                    className={`py-2.5 rounded-sm text-xs font-mono font-bold tracking-wider uppercase transition-all cursor-pointer ${
                       activeTab === 'ACTOR'
-                        ? 'text-[#9353FF] bg-black/50'
-                        : 'text-[#C4C4CC] hover:text-white'
+                        ? 'text-[#9353FF] bg-white/[0.03]'
+                        : 'text-[#A1A1AA] hover:text-white'
                     }`}
                   >
                     ACTOR
                   </button>
                   <button
+                    type="button"
                     onClick={() => setActiveTab('RECRUITER')}
-                    className={`px-5 py-2 rounded text-xs font-mono font-bold tracking-wider transition-all ${
+                    className={`py-2.5 rounded-sm text-xs font-mono font-bold tracking-wider uppercase transition-all cursor-pointer ${
                       activeTab === 'RECRUITER'
-                        ? 'text-[#9353FF] bg-black/50'
-                        : 'text-[#C4C4CC] hover:text-white'
+                        ? 'text-[#9353FF] bg-white/[0.03]'
+                        : 'text-[#A1A1AA] hover:text-white'
                     }`}
                   >
                     RECRUITER
                   </button>
                 </div>
               </div>
+
+              {col1.map((review, idx) => (
+                <ReviewCell
+                  key={`${activeTab}-col1-${review.name}`}
+                  t={review}
+                  borderBottom={idx < col1.length - 1}
+                />
+              ))}
             </div>
 
-            {/* Column 1 Reviews */}
-            {col1.map((review, idx) => (
-              <ReviewCell key={idx} t={review} borderBottom={idx < col1.length - 1} />
-            ))}
-          </div>
+            {/* Column 2: Staggered Higher (Starts alongside Toggle) */}
+            <div className="flex flex-col border-t md:border-t-0 border-white/[0.08]">
+              {col2.map((review, idx) => (
+                <ReviewCell
+                  key={`${activeTab}-col2-${review.name}`}
+                  t={review}
+                  borderBottom={idx < col2.length - 1}
+                />
+              ))}
+            </div>
 
-          {/* Column 2: Reviews */}
-          <div className="flex flex-col">
-            {col2.map((review, idx) => (
-              <ReviewCell key={idx} t={review} borderBottom={idx < col2.length - 1} />
-            ))}
+            {/* Column 3: Aligned with Column 1's First Card */}
+            <div className="flex flex-col border-t md:border-t-0 border-white/[0.08] md:pt-[74px]">
+              {col3.map((review, idx) => (
+                <ReviewCell
+                  key={`${activeTab}-col3-${review.name}`}
+                  t={review}
+                  borderBottom={idx < col3.length - 1}
+                />
+              ))}
+            </div>
           </div>
-
-          {/* Column 3: Reviews */}
-          <div className="flex flex-col">
-            {col3.map((review, idx) => (
-              <ReviewCell key={idx} t={review} borderBottom={idx < col3.length - 1} />
-            ))}
-          </div>
-
         </div>
-
       </div>
     </section>
   );
