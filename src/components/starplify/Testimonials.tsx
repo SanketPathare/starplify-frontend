@@ -27,6 +27,14 @@ const COL1_ACTORS: ReviewItem[] = [
       'The feedback I received on my compositions was invaluable. Starplify allowed me to collaborate with visionary creators and turn my passion into a viable career.',
     avatar: '/images/avatar_dev.png',
   },
+  {
+    name: 'ARJUN KAPOOR',
+    role: 'Commercial & Theatre',
+    rating: 4,
+    quote:
+      "Through workshops, I've received professional instruction on acting techniques, audition etiquette, and managing my career as an artist.",
+    avatar: '/images/avatar_arjun.png',
+  },
 ];
 
 const COL2_ACTORS: ReviewItem[] = [

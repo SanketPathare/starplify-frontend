@@ -65,10 +65,19 @@ export default function StarplifyFooter() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="colophon" className="relative bg-[#050508] text-[#A1A1AA] pt-8 pb-12 overflow-hidden border-t border-white/[0.08]">
+    <footer id="colophon" className="relative bg-[#000000] text-[#A1A1AA] pt-12 overflow-hidden border-t border-white/[0.08]">
       
-      {/* Centered Content Container (Frame 15) */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 pt-4">
+      {/* Background Architectural Grid Lines */}
+      <div className="absolute inset-0 pointer-events-none z-[1] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 divide-y-0 md:divide-x divide-white/[0.06]" aria-hidden="true">
+        <div className="border-l border-white/[0.06] h-full" />
+        <div className="h-full" />
+        <div className="border-r border-white/[0.06] h-full" />
+      </div>
+      <div className="absolute inset-y-0 left-4 sm:left-8 xl:left-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
+      <div className="absolute inset-y-0 right-4 sm:right-8 xl:right-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
+
+      {/* Centered Content Container (Exact Figma Frame 15) */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           
           {/* Brand Info & Mission (Col 1-5) */}
@@ -155,13 +164,8 @@ export default function StarplifyFooter() {
 
         </div>
 
-        {/* Sprocket Perforation Separator */}
-        <div className="my-10">
-          <FilmPerforations count={36} />
-        </div>
-
         {/* Footer Bottom Bar: Copyright & Legal */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#71717A] pt-2">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#71717A] pt-8 border-t border-white/[0.08] mt-10">
           <div className="copyright-text text-center sm:text-left">
             &copy; {currentYear} STARPLIFY INC. ALL RIGHTS RESERVED.
           </div>
@@ -177,6 +181,11 @@ export default function StarplifyFooter() {
           </div>
         </div>
 
+      </div>
+
+      {/* Bottom 35mm Film Sprocket Perforation Strip at Very Bottom of Page (Exact Reference) */}
+      <div className="relative z-10 w-full">
+        <FilmPerforations count={36} />
       </div>
 
     </footer>
