@@ -38,52 +38,54 @@ const ACTOR_PORTRAITS = [
 
 export default function StarplifyDiscovery() {
   return (
-    <section id="explore-talent" className="relative isolate py-20 sm:py-28 lg:py-36 bg-[#080808] overflow-hidden scroll-mt-20">
+    <section id="explore-talent" className="relative isolate py-20 sm:py-24 lg:py-28 bg-[#000000] overflow-hidden scroll-mt-20">
       
       {/* Background Architectural Grid Lines */}
-      <div className="absolute inset-0 pointer-events-none z-[1] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 divide-y-0 md:divide-x divide-white/[0.06]" aria-hidden="true">
-        <div className="border-l border-white/[0.06] h-full" />
+      <div className="absolute inset-0 pointer-events-none z-[1] max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 divide-y-0 md:divide-x divide-white/[0.05]" aria-hidden="true">
+        <div className="border-l border-white/[0.05] h-full" />
         <div className="h-full" />
-        <div className="border-r border-white/[0.06] h-full" />
+        <div className="border-r border-white/[0.05] h-full" />
       </div>
       <div className="absolute inset-y-0 left-4 sm:left-8 xl:left-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
       <div className="absolute inset-y-0 right-4 sm:right-8 xl:right-14 w-px bg-white/[0.04] pointer-events-none z-[1]" aria-hidden="true" />
 
-      {/* Radiant Violet Horizontal Spotlight Ribbon with Right Flare (Exact Reference Asset) */}
+      {/* Radiant Violet Spotlight Beam with Right Cone Flare (Exact Reference Asset Match) */}
       <div className="absolute inset-0 pointer-events-none -z-0 overflow-hidden" aria-hidden="true">
-        {/* Central horizontal purple glow beam */}
-        <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-7xl h-[400px] pointer-events-none opacity-50"
-          style={{
-            background:
-              'radial-gradient(ellipse 65% 50% at 50% 50%, rgba(130, 51, 255, 0.35) 0%, rgba(130, 51, 255, 0.1) 50%, transparent 80%)',
-          }}
-        />
-        {/* Soft left purple accent glow */}
-        <div
-          className="absolute top-[40%] left-[-40px] -translate-y-1/2 w-[400px] h-[350px] pointer-events-none opacity-40"
-          style={{
-            background:
-              'radial-gradient(ellipse at 15% 50%, rgba(130, 51, 255, 0.4) 0%, transparent 65%)',
-          }}
-        />
-        {/* Dramatic Right Flare (Exact Match for Reference) */}
-        <div
-          className="absolute top-[45%] right-[-100px] -translate-y-1/2 w-[550px] h-[500px] pointer-events-none opacity-85"
-          style={{
-            background:
-              'radial-gradient(ellipse 75% 65% at 95% 50%, rgba(130, 51, 255, 0.75) 0%, rgba(130, 51, 255, 0.3) 45%, transparent 75%)',
-          }}
-        />
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 900"
+        >
+          <defs>
+            <linearGradient id="purpleSpotlightBeam" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#631177" stopOpacity="0.3" />
+              <stop offset="25%" stopColor="#7917a2" stopOpacity="0.4" />
+              <stop offset="50%" stopColor="#8233FF" stopOpacity="0.55" />
+              <stop offset="75%" stopColor="#8a2be2" stopOpacity="0.75" />
+              <stop offset="100%" stopColor="#9353FF" stopOpacity="0.95" />
+            </linearGradient>
+            <filter id="beamGaussianBlur" x="-20%" y="-40%" width="140%" height="180%">
+              <feGaussianBlur stdDeviation="45" />
+            </filter>
+          </defs>
+          <path
+            d="M -80,410 Q 360,380 720,350 L 1500,210 L 1500,720 L 720,610 Q 360,590 -80,560 Z"
+            fill="url(#purpleSpotlightBeam)"
+            filter="url(#beamGaussianBlur)"
+          />
+        </svg>
+
+        {/* Soft Center Text Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[320px] rounded-full bg-[#8233FF]/15 blur-3xl pointer-events-none" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative min-h-[750px] lg:min-h-[860px] xl:min-h-[920px] flex flex-col justify-center items-center z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative min-h-[750px] lg:min-h-[850px] xl:min-h-[900px] flex flex-col justify-center items-center z-10">
         
         {/* Floating 6 Actor Portraits (Desktop Exact Reference Positions) */}
         <div className="hidden lg:block absolute inset-0 pointer-events-none">
           
           {/* 1. Top Center: Clapperboard Actress */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-auto w-52 xl:w-60 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 pointer-events-auto w-52 xl:w-56 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
             <img
               src="/images/actor_clapper_actress.png"
               alt="Actress with Clapperboard"
@@ -93,7 +95,7 @@ export default function StarplifyDiscovery() {
           </div>
 
           {/* 2. Top Left: Woman in Leather Jacket */}
-          <div className="absolute top-[7%] left-2 xl:left-4 pointer-events-auto w-48 xl:w-56 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
+          <div className="absolute top-[6%] left-2 xl:left-6 pointer-events-auto w-44 xl:w-52 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
             <img
               src="/images/actor_leather_woman.png"
               alt="Lead Drama Actress"
@@ -103,7 +105,7 @@ export default function StarplifyDiscovery() {
           </div>
 
           {/* 3. Top Right: Performer in Red Spotlight */}
-          <div className="absolute top-[15%] right-6 xl:right-10 pointer-events-auto w-44 xl:w-52 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
+          <div className="absolute top-[14%] right-4 xl:right-10 pointer-events-auto w-40 xl:w-48 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
             <img
               src="/images/actor_red_spotlight.png"
               alt="Cinema Lead in Red Spotlight"
@@ -113,7 +115,7 @@ export default function StarplifyDiscovery() {
           </div>
 
           {/* 4. Bottom Left: Actors in Beige Coat */}
-          <div className="absolute bottom-[4%] left-0 xl:left-2 pointer-events-auto w-52 xl:w-60 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
+          <div className="absolute bottom-[4%] left-0 xl:left-4 pointer-events-auto w-52 xl:w-60 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
             <img
               src="/images/actor_beige_man.png"
               alt="Actors in Editorial Coat"
@@ -123,7 +125,7 @@ export default function StarplifyDiscovery() {
           </div>
 
           {/* 5. Bottom Center: Smiling Actor in Black Jacket */}
-          <div className="absolute bottom-[2%] left-[45%] -translate-x-1/2 pointer-events-auto w-64 xl:w-72 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
+          <div className="absolute bottom-[3%] left-[44%] -translate-x-1/2 pointer-events-auto w-64 xl:w-72 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
             <img
               src="/images/actor_center_man.png"
               alt="Smiling Actor in Black Jacket"
@@ -133,7 +135,7 @@ export default function StarplifyDiscovery() {
           </div>
 
           {/* 6. Bottom Right: Handsome Actor in Black Suit */}
-          <div className="absolute bottom-0 right-4 xl:right-8 pointer-events-auto w-52 xl:w-64 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
+          <div className="absolute bottom-0 right-4 xl:right-8 pointer-events-auto w-56 xl:w-64 rounded-2xl overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-105 bg-black">
             <img
               src="/images/actor_black_suit.png"
               alt="Feature Film Performer in Black Suit"
@@ -146,7 +148,7 @@ export default function StarplifyDiscovery() {
 
         {/* Center Typography & CTA Button */}
         <div className="text-center max-w-2xl mx-auto relative z-20 py-12 sm:py-16 px-2">
-          <h2 className="text-3xl sm:text-4xl md:text-4xl  xl:text-[3.15rem] font-bold uppercase text-white tracking-tight leading-[1.12] font-sans">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl  font-bold uppercase text-white tracking-tight leading-[1.12] font-sans">
             UNLOCK AUDITIONS &amp; DISCOVER <br />
             10,000+ ACTORS TAILORED TO <br />
             YOUR REQUIREMENTS

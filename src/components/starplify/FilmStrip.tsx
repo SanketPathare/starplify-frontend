@@ -93,7 +93,7 @@ export default function StarplifyFilmStrip() {
           {/* Right Column: Vertical 35mm Film Strip Reel (Exact Reference Asset & Layout) */}
           <div className="lg:col-span-6 flex justify-center lg:justify-end w-full">
             <div className="relative bg-[#080808] flex items-stretch w-full max-w-[460px] sm:max-w-[490px] shadow-2xl rounded-none select-none overflow-hidden">
-              
+
               {/* Left Solid White Vertical Strip with Circular Black Sprocket Holes */}
               <div className="w-5 sm:w-6 bg-white flex flex-col justify-between items-center py-2.5 select-none flex-shrink-0" aria-hidden="true">
                 {Array.from({ length: 16 }).map((_, i) => (
