@@ -2,7 +2,15 @@
 
 import React, { useState } from 'react';
 
-const REVIEWS_ACTORS = [
+interface ReviewItem {
+  name: string;
+  role: string;
+  rating: number;
+  quote: string;
+  avatar: string;
+}
+
+const COL1_ACTORS: ReviewItem[] = [
   {
     name: 'PRIYA SINGH',
     role: 'TV Advertisement',
@@ -27,6 +35,9 @@ const REVIEWS_ACTORS = [
       'Finding quality auditions used to take weeks of networking. With Starplify, casting directors reach out directly with roles that match my profile.',
     avatar: '/images/figma/avatar_dev.png',
   },
+];
+
+const COL2_ACTORS: ReviewItem[] = [
   {
     name: 'ANIL KUMAR',
     role: 'TV Advertisement',
@@ -51,6 +62,9 @@ const REVIEWS_ACTORS = [
       "The experience at Starplify has been incredibly enriching. I've had the chance to explore various art forms and showcase my talent, integrating traditional Indian crafts with modern techniques.",
     avatar: '/images/figma/avatar_aisha.png',
   },
+];
+
+const COL3_ACTORS: ReviewItem[] = [
   {
     name: 'SITA VERMA',
     role: 'Music',
@@ -77,7 +91,7 @@ const REVIEWS_ACTORS = [
   },
 ];
 
-const REVIEWS_RECRUITERS = [
+const COL1_RECRUITERS: ReviewItem[] = [
   {
     name: 'SANJAY MEHTA',
     role: 'Casting Director, Yash Raj Talent',
@@ -86,6 +100,9 @@ const REVIEWS_RECRUITERS = [
       'Starplify has eliminated weeks of blind casting calls. We found the perfect ensemble cast for our upcoming drama series in under three days.',
     avatar: '/images/figma/avatar_anil.png',
   },
+];
+
+const COL2_RECRUITERS: ReviewItem[] = [
   {
     name: 'KAVITA MENON',
     role: 'Production Head, Dharma Digital',
@@ -94,6 +111,9 @@ const REVIEWS_RECRUITERS = [
       'The verified headshots and standardized actor tapes make shortlisting effortless. The talent pool is diverse, professional, and audit-ready.',
     avatar: '/images/figma/avatar_priya.png',
   },
+];
+
+const COL3_RECRUITERS: ReviewItem[] = [
   {
     name: 'ROHIT VERMA',
     role: 'Independent Film Director',
@@ -104,9 +124,9 @@ const REVIEWS_RECRUITERS = [
   },
 ];
 
-function ReviewCard({ t }: { t: typeof REVIEWS_ACTORS[0] }) {
+function ReviewCard({ t }: { t: ReviewItem }) {
   return (
-    <div className="bg-[#0e0e11]/85 border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#8233FF]/50 transition-all duration-300 shadow-xl backdrop-blur-md">
+    <div className="bg-[#050505] border border-white/10 rounded-2xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#8233FF]/50 transition-all duration-300 shadow-xl">
       <div>
         {/* Rating Stars (4 Gold Stars from Figma Frame 13) */}
         <div className="flex items-center gap-1.5 mb-4 text-[#FFB800]">
@@ -154,10 +174,12 @@ function ReviewCard({ t }: { t: typeof REVIEWS_ACTORS[0] }) {
 export default function StarplifyTestimonials() {
   const [activeTab, setActiveTab] = useState<'ACTOR' | 'RECRUITER'>('ACTOR');
 
-  const currentReviews = activeTab === 'ACTOR' ? REVIEWS_ACTORS : REVIEWS_RECRUITERS;
+  const col1 = activeTab === 'ACTOR' ? COL1_ACTORS : COL1_RECRUITERS;
+  const col2 = activeTab === 'ACTOR' ? COL2_ACTORS : COL2_RECRUITERS;
+  const col3 = activeTab === 'ACTOR' ? COL3_ACTORS : COL3_RECRUITERS;
 
   return (
-    <section id="success-stories" className="py-24 sm:py-36 bg-[#080808] text-white overflow-hidden scroll-mt-20">
+    <section id="success-stories" className="py-24 sm:py-36 bg-[#000000] text-white overflow-hidden scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header (Frame 13) */}
@@ -171,7 +193,7 @@ export default function StarplifyTestimonials() {
         </div>
 
         {/* Filter Toggle Tabs (Figma Frame 13: ACTOR & RECRUITER) */}
-        <div className="flex items-center justify-center mb-14">
+        <div className="flex items-center justify-center mb-16">
           <div className="inline-flex p-1.5 rounded-full bg-[#111116] border border-white/10 shadow-inner">
             <button
               onClick={() => setActiveTab('ACTOR')}
@@ -196,11 +218,30 @@ export default function StarplifyTestimonials() {
           </div>
         </div>
 
-        {/* Testimonials 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {currentReviews.map((review, idx) => (
-            <ReviewCard key={idx} t={review} />
-          ))}
+        {/* 3-Column Staggered Testimonial Cards Layout (Exact Figma Frame 13) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-start">
+          
+          {/* Column 1 */}
+          <div className="flex flex-col gap-6 lg:gap-8">
+            {col1.map((review, idx) => (
+              <ReviewCard key={idx} t={review} />
+            ))}
+          </div>
+
+          {/* Column 2 (Staggered Offset Matching Figma) */}
+          <div className="flex flex-col gap-6 lg:gap-8 md:pt-6 lg:pt-8">
+            {col2.map((review, idx) => (
+              <ReviewCard key={idx} t={review} />
+            ))}
+          </div>
+
+          {/* Column 3 */}
+          <div className="flex flex-col gap-6 lg:gap-8 md:col-span-2 lg:col-span-1">
+            {col3.map((review, idx) => (
+              <ReviewCard key={idx} t={review} />
+            ))}
+          </div>
+
         </div>
 
       </div>

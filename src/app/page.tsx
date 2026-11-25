@@ -10,7 +10,7 @@ import StarplifyFooter from '@/components/starplify/Footer';
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'Starplify - Casting & Audition Platform for Actors & Recruiters',
+    absolute: 'Starplify - Smart Casting Platform for Actors & Recruiters',
   },
   description:
     'Because your talent deserves the spotlight. From auditions to final casting — streamline your entire journey with Starplify.',
@@ -28,10 +28,19 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white selection:bg-[#8233FF] selection:text-white font-sans antialiased overflow-x-hidden">
+      {/* Background Architectural Grid Lines (matching Figma vertical layout grid) */}
+      <div className="architectural-grid" aria-hidden="true">
+        <div className="grid-line" />
+        <div className="grid-line" />
+        <div className="grid-line" />
+        <div className="grid-line" />
+        <div className="grid-line" />
+      </div>
+
       {/* 1. Fixed Header (Frame 1) */}
       <StarplifyNavbar />
 
-      <main>
+      <main className="relative z-10">
         {/* 2. Hero Section + Metrics (Frame 1321319014 & 1321319015) */}
         <StarplifyHero />
 
@@ -49,7 +58,9 @@ export default function HomePage() {
       </main>
 
       {/* 7. Footer (Frame 15) */}
-      <StarplifyFooter />
+      <div className="relative z-10">
+        <StarplifyFooter />
+      </div>
     </div>
   );
 }
